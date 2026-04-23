@@ -3,3 +3,8 @@ You are using a version of Node.js that is not supported by Hardhat, and it may 
 Please, make sure you are using a supported version of Node.js.
 
 To learn more about which versions of Node.js are supported go to https://hardhat.org/nodejs-versions
+Error: listen EADDRINUSE: address already in use 127.0.0.1:8545
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at doListen (node:net:2135:7)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
