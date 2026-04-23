@@ -81,6 +81,7 @@ export class CreateEvent extends React.Component {
   }
 
   _validateCreateEventForm() {
+    const organizerAddress = (this.props.state.selectedAddress || "").trim();
     const name = (this.props.state.formEventName || "").trim();
     const symbol = (this.props.state.formEventSymbol || "").trim();
     const numTickets = Number(this.props.state.formNumTickets);
@@ -88,6 +89,10 @@ export class CreateEvent extends React.Component {
     const royaltyPercent = Number(this.props.state.formRoyaltyPercent);
     const canBeResold = this._parseBooleanDecimal(this.props.state.formCanBeResold);
 
+    if (!organizerAddress) {
+      alert("Please connect your wallet before creating an event.");
+      return null;
+    }
     if (!name || !symbol) {
       alert("Missing required fields: Event name and Token symbol are required.");
       return null;
@@ -157,6 +162,17 @@ export class CreateEvent extends React.Component {
               );
             }}
           >
+            <Input
+              isReadOnly
+              id='organizerAddress'
+              type='text'
+              size="md"
+              value={this.props.state.selectedAddress || ""}
+              placeholder='Connect wallet to show organizer address'
+              mb="10px"
+              _placeholder={{ color: 'gray.500' }}
+              w="450px"
+            />
             <Input
               isRequired
               id='name'
