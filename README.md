@@ -40,6 +40,18 @@ Open [http://localhost:3000/](http://localhost:3000/) to see your Dapp. You will
 need to have [Metamask](https://metamask.io) installed and listening to
 `localhost 8545`.
 
+### Add Local Network To MetaMask
+
+To connect MetaMask to this local Hardhat chain, add a custom network with:
+
+- Network Name: `Hardhat Local`
+- RPC URL: `http://127.0.0.1:8545`
+- Chain ID: `31337`
+- Currency Symbol: `ETH`
+- Block Explorer URL: leave blank
+
+Then import one of the Hardhat test accounts (private key printed by `npx hardhat node`) into MetaMask.
+
 ### User Guide
 
 You can find detailed instructions on using this repository and many tips in [its documentation](https://hardhat.org/tutorial).
